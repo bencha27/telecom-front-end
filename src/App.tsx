@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 
 import ErrorPage from './ErrorPage';
 import CreateAccount from './pages/CreateAccount';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "create",
     element: <CreateAccount />,
+  },
+  {
+    path: "login",
+    element: <Login />,
   }
 ]);
 
