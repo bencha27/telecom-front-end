@@ -18,7 +18,7 @@ export default function Header() {
               height="50"
               className="d-inline-block align-top"
             />{' '}
-            <span style={{color: "steelblue", fontWeight: "bold", fontSize: "2rem", textAlign: "center"}}>Clear Mobile</span>
+            <span style={{color: "steelblue", fontWeight: "bold", fontSize: "2rem", textAlign: "center"}}>clear mobile</span>
           </Navbar.Brand>
         </Col>
 
@@ -26,7 +26,7 @@ export default function Header() {
 
         <Col md="3">
           <Nav className="me-auto justify-content-end">
-            <Nav.Link href="/login" className="custom-link" style={{fontSize: "1.3rem", fontWeight: "bold"}}>Account</Nav.Link>
+            <Nav.Link href="/login" className="custom-nav-link" style={{fontSize: "1.3rem", fontWeight: "bold"}}>Account</Nav.Link>
           </Nav>
         </Col>
 

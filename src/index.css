@@ -12,7 +12,16 @@ code {
     monospace;
 }
 
-.custom-link{
+.custom-link {
+  color: steelblue;
+  text-decoration: none;
+}
+
+.custom-link:hover {
+  color: #212529;
+}
+
+.custom-nav-link {
   --bs-nav-link-hover-color: steelblue;
   --bs-navbar-active-color: steelblue;
 }

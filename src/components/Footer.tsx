@@ -17,12 +17,12 @@ export default function Footer() {
           <Nav className="me-auto justify-content-end">
             <Nav.Link 
               href="https://github.com/bencha27/telecom-front-end" 
-              className="px-3 custom-link">
+              className="px-3 custom-nav-link">
               GitHub (Front-End)
             </Nav.Link>
             <Nav.Link 
               href="https://github.com/Bram-Gr/telecom" 
-              className="px-3 custom-link">
+              className="px-3 custom-nav-link">
               GitHub (Back-End)
             </Nav.Link>
           </Nav>
