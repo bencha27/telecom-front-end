@@ -7,6 +7,7 @@ import ErrorPage from './ErrorPage';
 import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 const router = createBrowserRouter([
   {
@@ -26,13 +27,10 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <div>
+    <>
       <Header />
-      <Container fluid="lg">
-        <Row>
-          <RouterProvider router={router} />
-        </Row>
-      </Container>
-    </div>
+      <RouterProvider router={router} />
+      <Footer />
+    </>
   );
 }

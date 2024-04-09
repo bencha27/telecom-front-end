@@ -26,7 +26,7 @@ export default function Header() {
 
         <Col md="3">
           <Nav className="me-auto justify-content-end">
-            <Nav.Link href="/login" style={{fontSize: "1.3rem", fontWeight: "bold"}}>Account</Nav.Link>
+            <Nav.Link href="/login" className="custom-link" style={{fontSize: "1.3rem", fontWeight: "bold"}}>Account</Nav.Link>
           </Nav>
         </Col>
 

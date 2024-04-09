@@ -12,7 +12,10 @@ code {
     monospace;
 }
 
-
+.custom-link{
+  --bs-nav-link-hover-color: steelblue;
+  --bs-navbar-active-color: steelblue;
+}
 
 
 #error-page {
