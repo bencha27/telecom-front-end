@@ -8,6 +8,7 @@ import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Dashboard from './pages/Dashboard';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login />,
+  },
+  {
+    path: "account",
+    element: <Dashboard />,
   }
 ]);
 

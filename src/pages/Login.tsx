@@ -13,7 +13,7 @@ export default function Login() {
     
     console.log(`username: ${username}, password: ${password}`);
 
-    navigate("/");
+    navigate("/account");
   }
 
   return (
