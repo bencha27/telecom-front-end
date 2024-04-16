@@ -1,9 +1,14 @@
+import React from "react";
 import { Container, Button, Col, Form, Row, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
   
+  function handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
+    navigate("/signup");
+  }
+
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -16,13 +21,14 @@ export default function Login() {
     navigate("/account");
   }
 
+
   return (
-    <Container className="py-4">
-      <Row className="justify-content-center">
+    <Container className="py-5">
+      <Row className="justify-content-center py-5">
         <Col xs="10" sm="6" md="5" xl="4">
           <Card>
-            <Card.Header>Log in</Card.Header>
-            <Card.Link href="/create" className="px-3 pt-3 custom-link">New customer? Create an account</Card.Link>
+            <Card.Header className="fs-3">Log in</Card.Header>
+            <Card.Link className="px-3 pt-3 custom-link" onClick={handleClick} style={{ "cursor": "pointer" }}>New customer? Create an account</Card.Link>
             <Form className="p-3" onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicUsername">
                 <Form.Label style={{fontWeight: 600}}>Username</Form.Label>

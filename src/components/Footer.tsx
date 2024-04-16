@@ -2,7 +2,7 @@ import { Container, Col, Navbar, Nav } from "react-bootstrap";
 
 export default function Footer() {
   return (
-    <Navbar className='py-3' style={{backgroundColor: 'lightgray'}}>
+    <Navbar className='py-4' style={{backgroundColor: 'lightgray'}}>
       <Container>
         <Col></Col>
 
