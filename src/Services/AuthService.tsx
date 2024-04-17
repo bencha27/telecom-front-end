@@ -20,7 +20,7 @@ export const loginApi = async (username, password) => {
 
 export const signupApi = async (username, email, password) => {
   try {
-    const data = await axios.post(`${api}/signup`, { username, email, password });
+    const data = await axios.post(`${api}`, { username, email, password });
     return data;
   } catch(error) {
     if (axios.isAxiosError(error)) {

@@ -31,12 +31,6 @@ export default function SignupPage() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    // console.log(
-    //   `email: ${formState.email}
-    //   username: ${formState.username} 
-    //   password: ${formState.password}`
-    // );
-
     signupUser(formState.username, formState.email, formState.password);
 
     setFormState({
