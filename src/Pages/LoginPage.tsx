@@ -1,24 +1,46 @@
-import React from "react";
+// @ts-nocheck
+
+import React, { useState } from "react";
 import { Container, Button, Col, Form, Row, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+import { useAuth } from "../Context/useAuth";
+
+export default function LoginPage() {
   const navigate = useNavigate();
+  const { loginUser } = useAuth();
+
+  const [formState, setFormState] = useState({
+    username: "",
+    password: ""
+  });
   
-  function handleClick(event: React.MouseEvent<HTMLAnchorElement>) {
+  function handleLinkClick(e) {
     navigate("/signup");
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    setFormState({
+      ...formState,
+      [name]: value
+    });
+  };
 
-    const formData = new FormData(event.currentTarget);
-    const username = formData.get('username') as string;
-    const password = formData.get('password') as string;
-    
-    console.log(`username: ${username}, password: ${password}`);
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
 
-    navigate("/account");
+    // console.log(
+    //   `username: ${formState.username} 
+    //   password: ${formState.password}`
+    // );
+
+    loginUser(formState.username, formState.password);
+
+    setFormState({
+      username: "",
+      password: "",
+    });
   }
 
 
@@ -28,8 +50,8 @@ export default function Login() {
         <Col xs="10" sm="6" md="5" xl="4">
           <Card>
             <Card.Header className="fs-3">Log in</Card.Header>
-            <Card.Link className="px-3 pt-3 custom-link" onClick={handleClick} style={{ "cursor": "pointer" }}>New customer? Create an account</Card.Link>
-            <Form className="p-3" onSubmit={handleSubmit}>
+            <Card.Link className="px-3 pt-3 custom-link" onClick={handleLinkClick} style={{ "cursor": "pointer" }}>New customer? Create an account</Card.Link>
+            <Form className="p-3" onChange={handleInputChange} onSubmit={handleFormSubmit}>
               <Form.Group className="mb-3" controlId="formBasicUsername">
                 <Form.Label style={{fontWeight: 600}}>Username</Form.Label>
                 <Form.Control type="text" name="username" placeholder="Enter username" />

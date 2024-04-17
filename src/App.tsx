@@ -1,16 +1,21 @@
+// @ts-nocheck
+
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+import { UserProvider } from './Context/useAuth';
 
 export default function App() {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserProvider>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserProvider>
     </>
   );
 }

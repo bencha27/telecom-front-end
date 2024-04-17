@@ -2,7 +2,7 @@
 
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 
-import MyPhonePlanCard from "../components/dashboardComponents/MyPhonePlanCard";
+import MyPhonePlanCard from "../Components/DashboardComponents/MyPhonePlanCard";
 
 let myPhonePlans = [
   {
@@ -36,7 +36,7 @@ let myPhonePlans = [
   },
 ];
 
-export default function Dashboard() {
+export default function AccountPage() {
   let total = myPhonePlans.reduce((sum, myPhonePlan) => sum + myPhonePlan.Price, 0);
 
   return (
@@ -56,13 +56,17 @@ export default function Dashboard() {
 
         <Col className="col-md-5">
           <h2 className="py-2">My Plans</h2>
-          <ul className="list-group">
-            {myPhonePlans.map((myPhonePlan) => (
-              <li className="list-group-item mb-4 border" key={myPhonePlan.PhonePlanId}>
-                <MyPhonePlanCard myPhonePlan={myPhonePlan} />
-              </li>
-            ))}
-          </ul>
+          {myPhonePlans.length > 0 ? (
+            <ul className="list-group">
+              {myPhonePlans.map((myPhonePlan) => (
+                <li className="list-group-item mb-4 border" key={myPhonePlan.PhonePlanId}>
+                  <MyPhonePlanCard myPhonePlan={myPhonePlan} />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Sign up for a phone plan!</p>
+          )}
         </Col>
 
         <Col></Col>

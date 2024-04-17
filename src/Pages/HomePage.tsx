@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap"
-import PhonePlanCardList from "../components/homeComponents/PhonePlanCardList";
+import PhonePlanCardList from "../Components/HomeComponents/PhonePlanCardList";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <Container className="py-5">
       <Row className="py-3">

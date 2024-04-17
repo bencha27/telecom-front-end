@@ -7,11 +7,11 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import './index.css';
 
 import App from './App';
-import Home from './pages/Home';
+import HomePage from './Pages/HomePage';
 import ErrorPage from './ErrorPage';
-import CreateAccount from './pages/CreateAccount';
-import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
+import SignupPage from './Pages/SignupPage';
+import LoginPage from './Pages/LoginPage';
+import AccountPage from './Pages/AccountPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -24,20 +24,20 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
-        element: <Home />,
+        path: "",
+        element: <HomePage />,
       },
       {
         path: "signup",
-        element: <CreateAccount />,
+        element: <SignupPage />,
       },
       {
-        path: "/login",
-        element: <Login />,
+        path: "login",
+        element: <LoginPage />,
       },
       {
         path: "account",
-        element: <Dashboard />,
+        element: <AccountPage />,
       }
     ]
   },
