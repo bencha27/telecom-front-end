@@ -11,6 +11,7 @@ import { useAuth } from "../Context/useAuth";
 
 export default function AccountPage() {
    const {user} = useAuth();
+   console.log(user);
    const userId = user.userId;
   const [total, setTotal] = useState(0);
   const [myPhonePlans, setMyPhonePlans] = useState([]);
@@ -39,17 +40,20 @@ export default function AccountPage() {
         <Col></Col>
         
         <Col className="col-md-8">
-          <h1>My Account</h1>
+          <h1>Welcome {user.username},</h1>
+          <h3>To Your Account Snapshot</h3>
         </Col>
         
-        <Col></Col>
+        <Col>
+        </Col>
       </Row>
+
 
       <Row className="py-2">
         <Col></Col>
 
         <Col className="col-md-5">
-          <h2 className="py-2">My Plans</h2>
+          <h2 className="py-2">{user.username}'s Plans</h2>
           {myPhonePlans.length > 0 ? (
             <ul className="list-group">
               {myPhonePlans.map((myPhonePlan) => (

@@ -28,3 +28,13 @@ export const getPhonePlansApi = async (userId) => {
         }
     }
 }
+export const getDevicesApi = async (userId) => {
+    try {
+        const data = await axios.get(`${api}/${userId}/device`);
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            console.error(error.message);
+        }
+    }
+}
