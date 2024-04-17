@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import MyPhonePlanCard from "../Components/AccountComponents/MyPhonePlanCard";
 import { getBillsApi } from "../Services/AccountService";
 import { useEffect, useState } from "react";
+import { useAuth } from "../Context/useAuth";
 
 let myPhonePlans = [
   {
@@ -39,7 +40,8 @@ let myPhonePlans = [
 ];
 
 export default function AccountPage() {
-  const { userId } = useParams();
+   const {user} = useAuth();
+   const userId = user.userId;
   console.log("userId from route parameters:", userId);
   const [total, setTotal] = useState(0);
   
@@ -48,7 +50,7 @@ export default function AccountPage() {
       try {
         const billAmount = await getBillsApi(userId);
 
-        setTotal(billAmount);
+        setTotal(billAmount.data);
       } catch (error) {
         console.error("Error fetching bills:", error);
       }
