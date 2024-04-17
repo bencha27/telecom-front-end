@@ -1,8 +1,10 @@
 // @ts-nocheck
 
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
-
+import { useParams } from 'react-router-dom';
 import MyPhonePlanCard from "../Components/AccountComponents/MyPhonePlanCard";
+import { getBillsApi } from "../Services/AccountService";
+import { useEffect, useState } from "react";
 
 let myPhonePlans = [
   {
@@ -37,7 +39,23 @@ let myPhonePlans = [
 ];
 
 export default function AccountPage() {
-  let total = myPhonePlans.reduce((sum, myPhonePlan) => sum + myPhonePlan.Price, 0);
+  const { userId } = useParams();
+  console.log("userId from route parameters:", userId);
+  const [total, setTotal] = useState(0);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const billAmount = await getBillsApi(userId);
+
+        setTotal(billAmount);
+      } catch (error) {
+        console.error("Error fetching bills:", error);
+      }
+    };
+
+    fetchData();
+  }, [userId]); // Run effect whenever userId changes
 
   return (
     <Container className="py-4">

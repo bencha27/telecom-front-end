@@ -30,18 +30,22 @@ export default function LoginPage(props) {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    // console.log(
-    //   `username: ${formState.username} 
-    //   password: ${formState.password}`
-    // );
-
-
-    loginUser(formState.username, formState.password);
-
-    setFormState({
-      username: "",
-      password: "",
-    });
+    try {
+      // Call loginUser function and get the user object or userId
+      const user = await loginUser(formState.username, formState.password);
+      const userId = user.userId; // Assuming `userId` is the property you want to use
+  
+      // Redirect to the AccountPage with userId
+      navigate(`/account/${userId}`);
+  
+      setFormState({
+        username: '',
+        password: '',
+      });
+    } catch (error) {
+      console.error("Error logging in:", error);
+      // Handle login error
+    }
   }
 
 
