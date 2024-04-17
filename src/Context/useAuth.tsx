@@ -32,7 +32,7 @@ export const UserProvider = ({ children }) => {
     await signupApi(username, email, password)
       .then((res) => {
         if (res) {
-          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("token", res.data.id);
 
           const userObj = {
             username: res.data.username,
@@ -40,7 +40,7 @@ export const UserProvider = ({ children }) => {
           };
           localStorage.setItem("user", JSON.stringify(userObj));
 
-          setToken(res.data.token);
+          setToken(res.data.id);
           setUser(userObj);
           navigate("/account");
         }
@@ -51,8 +51,9 @@ export const UserProvider = ({ children }) => {
   const loginUser = async (username, password) => {
     await loginApi(username, password)
       .then((res) => {
-        if (res) {
-          localStorage.setItem("token", res.data.token);
+        console.log(res);
+        if (res.data.username === username) {
+          localStorage.setItem("token", res.data.id);
 
           const userObj = {
             username: res.data.username,
@@ -60,9 +61,9 @@ export const UserProvider = ({ children }) => {
           };
           localStorage.setItem("user", JSON.stringify(userObj));
 
-          setToken(res.data.token);
+          setToken(res.data.id);
           setUser(userObj);
-          navigate("/account");
+          navigate("/account/");
         }
       })
       .catch((e) => console.error(e));

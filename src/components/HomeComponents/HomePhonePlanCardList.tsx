@@ -1,15 +1,15 @@
 // @ts-nocheck
 
-import PhonePlanCard from "./PhonePlanCard";
+import HomePhonePlanCard from "./HomePhonePlanCard";
 
-export default function PhonePlanCardList(props) {
+export default function HomePhonePlanCardList(props) {
   let phonePlans = props.phonePlans;
 
   return (
     <ul className="list-group list-group-horizontal justify-content-center">
       {phonePlans.map((phonePlan) => (
         <li className="list-group-item" key={phonePlan.id}>
-          <PhonePlanCard phonePlan={phonePlan} />
+          <HomePhonePlanCard phonePlan={phonePlan} />
         </li>
       ))}
     </ul>

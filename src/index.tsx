@@ -12,6 +12,7 @@ import ErrorPage from './ErrorPage';
 import SignupPage from './Pages/SignupPage';
 import LoginPage from './Pages/LoginPage';
 import AccountPage from './Pages/AccountPage';
+import AccountPhonePlansPage from './Pages/AccountPhonePlansPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

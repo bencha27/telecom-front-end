@@ -1,12 +1,12 @@
 // @ts-nocheck
 
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { Container, Button, Col, Form, Row, Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 
 import { useAuth } from "../Context/useAuth";
 
-export default function LoginPage() {
+export default function LoginPage(props) {
   const navigate = useNavigate();
   const { loginUser } = useAuth();
 
@@ -34,6 +34,7 @@ export default function LoginPage() {
     //   `username: ${formState.username} 
     //   password: ${formState.password}`
     // );
+
 
     loginUser(formState.username, formState.password);
 

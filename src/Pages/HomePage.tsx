@@ -2,7 +2,7 @@
 
 import { Container, Row, Col } from "react-bootstrap"
 
-import PhonePlanCardList from "../Components/HomeComponents/PhonePlanCardList";
+import HomePhonePlanCardList from "../Components/HomeComponents/HomePhonePlanCardList";
 import { phonePlanGetApi } from "../Services/HomeService";
 import { useState, useEffect } from "react";
 
@@ -22,9 +22,9 @@ export default function HomePage() {
       <Row className="py-3">
         <h1 className="text-center fst-italic">What you see is what you get!</h1>
       </Row>
-      
+
       <Row className="py-5 justify-content-center">
-          <PhonePlanCardList phonePlans={phonePlans} />
+          <HomePhonePlanCardList phonePlans={phonePlans} />
       </Row>
     </Container>
   );

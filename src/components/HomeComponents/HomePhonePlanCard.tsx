@@ -3,12 +3,12 @@
 import { Card, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-export default function PhonePlanCard(props) {
+export default function HomePhonePlanCard(props) {
   let phonePlan = props.phonePlan;
   
   const navigate = useNavigate();
 
-  function handleClick(event: React.MouseEvent<HTMLButtonElement>) {
+  function handleClick(e) {
     navigate('/signup');
   }
 

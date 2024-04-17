@@ -2,7 +2,7 @@
 
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 
-import MyPhonePlanCard from "../Components/DashboardComponents/MyPhonePlanCard";
+import MyPhonePlanCard from "../Components/AccountComponents/MyPhonePlanCard";
 
 let myPhonePlans = [
   {
